@@ -19,7 +19,7 @@ confirm() {
   fi
 }
 
-genstring() {
+genstring() {m
   local l=$1
   [ "$l" == "" ] && l=40
   LC_ALL=C tr -dc A-Za-z0-9 < /dev/urandom | head -c ${l}
@@ -103,7 +103,7 @@ cat > ./config.json << EOF
   "masterKey": "$MASTER_KEY",
   "appName": "$APP_NAME",
   "cloud": "./cloud/main",
-  "mongodbURI": "$MONGODB_URI"
+  "databaseURI": "$MONGODB_URI"
 }
 EOF
 echo "${CHECK} Created config.json"
